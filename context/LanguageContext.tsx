@@ -14,19 +14,41 @@ interface LanguageContextType {
   dir: "ltr" | "rtl";
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const defaultContent: Content = enContent;
+
+const LanguageContext = createContext<LanguageContextType>({
+  lang: "en",
+  setLang: () => {},
+  content: defaultContent,
+  dir: "ltr",
+});
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Language>("en");
   const [dir, setDir] = useState<"ltr" | "rtl">("ltr");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-    setDir(lang === "ar" ? "rtl" : "ltr");
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      setDir(lang === "ar" ? "rtl" : "ltr");
+    }
   }, [lang]);
 
-  const content = lang === "en" ? enContent : arContent;
+  const content = lang === "en" ? enContent : (arContent || enContent);
+
+  if (!mounted) {
+    return (
+      <LanguageContext.Provider value={{ lang: "en", setLang: () => {}, content: defaultContent, dir: "ltr" }}>
+        {children}
+      </LanguageContext.Provider>
+    );
+  }
 
   return (
     <LanguageContext.Provider value={{ lang, setLang, content, dir }}>
@@ -37,8 +59,5 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
 export function useLanguage() {
   const context = useContext(LanguageContext);
-  if (context === undefined) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
-  }
   return context;
 }
