@@ -18,11 +18,20 @@ export default function WhyAutomation() {
     <section className="py-24 bg-ice" id="why">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
+          <motion.span 
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-block px-4 py-1.5 bg-neon/10 text-neon rounded-full text-sm font-medium mb-4"
+          >
+            Benefits
+          </motion.span>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-midnight">
             {content.whyAutomation.title}
           </h2>
@@ -33,16 +42,28 @@ export default function WhyAutomation() {
           {content.whyAutomation.cards.map((card, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-neon/30 transition-all group"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.1,
+                type: "spring",
+                stiffness: 100
+              }}
+              whileHover={{ 
+                y: -12,
+                transition: { duration: 0.3 }
+              }}
+              className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-neon/30 transition-all group cursor-default"
             >
-              <div className="w-12 h-12 bg-neon/10 rounded-lg flex items-center justify-center text-neon mb-6 group-hover:bg-neon group-hover:text-white transition-colors">
+              <motion.div 
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.5 }}
+                className="w-12 h-12 bg-neon/10 rounded-lg flex items-center justify-center text-neon mb-6 group-hover:bg-neon group-hover:text-white transition-colors"
+              >
                 <span className="material-symbols-outlined">{icons[card.icon]}</span>
-              </div>
+              </motion.div>
               <h3 className="font-bold text-lg mb-3 text-midnight">{card.title}</h3>
               <p className="text-sm text-slate-500 leading-relaxed">{card.description}</p>
             </motion.div>
