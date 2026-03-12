@@ -29,8 +29,61 @@ export default function Hero() {
       {/* Static background — no CPU cost */}
       <div className="absolute inset-0 network-bg" />
       <div className="absolute inset-0 bg-gradient-to-tr from-neon/10 via-transparent to-transparent" />
-      <div className="absolute top-20 right-20 w-64 h-64 bg-neon/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+      
+      {/* Animated floating orbs */}
+      <motion.div 
+        animate={{ 
+          x: [0, 30, 0], 
+          y: [0, -30, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{ 
+          duration: 8, 
+          repeat: Infinity, 
+          ease: "easeInOut" 
+        }}
+        className="absolute top-20 right-20 w-64 h-64 bg-neon/10 rounded-full blur-3xl" 
+      />
+      <motion.div 
+        animate={{ 
+          x: [0, -40, 0], 
+          y: [0, 40, 0],
+          scale: [1, 1.3, 1],
+        }}
+        transition={{ 
+          duration: 10, 
+          repeat: Infinity, 
+          ease: "easeInOut" 
+        }}
+        className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" 
+      />
+      
+      {/* Additional floating particles */}
+      {[...Array(5)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-2 h-2 bg-neon/30 rounded-full"
+          initial={{ 
+            x: Math.random() * 1000, 
+            y: Math.random() * 600,
+            opacity: 0 
+          }}
+          animate={{ 
+            y: [null, -100],
+            opacity: [0, 1, 0],
+          }}
+          transition={{ 
+            duration: 3 + Math.random() * 2, 
+            repeat: Infinity, 
+            delay: Math.random() * 2,
+            ease: "easeOut"
+          }}
+          style={{
+            left: `${20 + i * 15}%`,
+            top: `${60 + (i % 3) * 10}%`,
+          }}
+        />
+      ))}
 
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left: text */}
@@ -56,9 +109,36 @@ export default function Hero() {
             className="text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tight"
           >
             {content.hero.title} <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon via-purple-400 to-neon">
-              {content.hero.titleHighlight}
-            </span>
+            <motion.span
+              className="text-transparent bg-clip-text bg-gradient-to-r from-neon via-purple-400 via-pink-400 to-neon bg-[length:300%_auto]"
+              animate={{
+                backgroundPosition: ["0% center", "100% center", "0% center"],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              <motion.span
+                animate={{
+                  textShadow: [
+                    "0 0 10px rgba(138, 44, 226, 0.5)",
+                    "0 0 30px rgba(138, 44, 226, 0.8)",
+                    "0 0 50px rgba(138, 44, 226, 1)",
+                    "0 0 30px rgba(138, 44, 226, 0.8)",
+                    "0 0 10px rgba(138, 44, 226, 0.5)",
+                  ],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                {content.hero.titleHighlight}
+              </motion.span>
+            </motion.span>
           </motion.h1>
 
           <motion.p
