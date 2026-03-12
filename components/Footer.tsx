@@ -16,26 +16,8 @@ export default function Footer() {
   return (
     <footer className="bg-midnight py-20 text-slate-300 border-t border-white/5 relative overflow-hidden">
       {/* Background decoration */}
-      <motion.div 
-        className="absolute -bottom-20 -left-20 w-80 h-80 bg-neon/5 rounded-full blur-3xl"
-        animate={{ 
-          scale: [1, 1.2, 1],
-        }}
-        transition={{ 
-          duration: 8,
-          repeat: Infinity
-        }}
-      />
-      <motion.div 
-        className="absolute -top-20 -right-20 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl"
-        animate={{ 
-          scale: [1.2, 1, 1.2],
-        }}
-        transition={{ 
-          duration: 10,
-          repeat: Infinity
-        }}
-      />
+      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-neon/5 rounded-full blur-3xl" />
+      <div className="absolute -top-20 -right-20 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
         <motion.div 

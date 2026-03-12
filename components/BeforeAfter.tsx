@@ -1,27 +1,16 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function BeforeAfter() {
   const { content } = useLanguage();
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "center center"]
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
   return (
     <section className="py-24 bg-white" id="impact">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          ref={ref}
-        >
-          <motion.h2 
+        <div>
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -29,7 +18,7 @@ export default function BeforeAfter() {
           >
             {content.beforeAfter.title}
           </motion.h2>
-        </motion.div>
+        </div>
 
         <div className="flex flex-col lg:flex-row items-stretch gap-8 relative">
           {/* Before */}
@@ -82,19 +71,10 @@ export default function BeforeAfter() {
             viewport={{ once: true }}
             className="hidden lg:flex items-center justify-center py-10 px-4"
           >
-            <motion.div 
-              animate={{ 
-                x: [0, 10, 0],
-              }}
-              transition={{ 
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="w-16 h-16 rounded-full bg-neon text-white flex items-center justify-center shadow-lg shadow-neon/40"
+            <div className="w-16 h-16 rounded-full bg-neon text-white flex items-center justify-center shadow-lg shadow-neon/40"
             >
               <span className="material-symbols-outlined text-4xl">arrow_forward</span>
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* After */}
@@ -105,17 +85,7 @@ export default function BeforeAfter() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex-1 bg-neon/5 p-10 rounded-3xl border border-neon/20 relative overflow-hidden"
           >
-            <motion.div 
-              className="absolute inset-0 bg-gradient-to-br from-neon/5 to-transparent"
-              animate={{ 
-                backgroundPosition: ["0% 0%", "100% 100%"] 
-              }}
-              transition={{ 
-                duration: 3, 
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
+            <div className="absolute inset-0 bg-gradient-to-br from-neon/5 to-transparent" />
             <div className="absolute -top-4 -right-4 bg-neon text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">
               {content.beforeAfter.after.badge}
             </div>

@@ -138,16 +138,7 @@ export default function ContactForm() {
             className="bg-white p-8 rounded-3xl shadow-lg relative overflow-hidden"
           >
             {/* Background decoration */}
-            <motion.div 
-              className="absolute top-0 right-0 w-40 h-40 bg-neon/5 rounded-full blur-2xl"
-              animate={{ 
-                scale: [1, 1.2, 1],
-              }}
-              transition={{ 
-                duration: 3,
-                repeat: Infinity
-              }}
-            />
+            <div className="absolute top-0 right-0 w-40 h-40 bg-neon/5 rounded-full blur-2xl" />
 
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <motion.div
