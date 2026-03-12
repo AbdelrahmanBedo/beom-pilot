@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
 import LegalModal from "./LegalModal";
+import Logo from "./Logo";
 
 export default function Footer() {
   const { content } = useLanguage();
@@ -29,15 +30,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="col-span-1 md:col-span-1 space-y-6"
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-3"
-            >
-              <div className="p-2 bg-neon rounded-lg">
-                <span className="material-symbols-outlined text-2xl text-white">rocket_launch</span>
-              </div>
-              <span className="text-xl font-bold tracking-tight text-white">{content.nav.logo}</span>
-            </motion.div>
+            <Logo variant="footer" />
             <p className="text-sm text-slate-400 leading-relaxed">
               {content.footer.description}
             </p>

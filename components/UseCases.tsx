@@ -2,9 +2,12 @@
 
 import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import UseCaseModal from "./UseCaseModal";
 
 export default function UseCases() {
   const { content } = useLanguage();
+  const [selectedUseCase, setSelectedUseCase] = useState<number | null>(null);
 
   return (
     <section className="py-24 bg-white">
@@ -41,6 +44,7 @@ export default function UseCases() {
                 y: -8,
                 transition: { duration: 0.3 }
               }}
+              onClick={() => setSelectedUseCase(index)}
               className="p-6 bg-ice rounded-2xl border border-slate-100 hover:border-neon/30 hover:shadow-lg transition-all group cursor-pointer"
             >
               <motion.div 
@@ -74,6 +78,12 @@ export default function UseCases() {
           ))}
         </div>
       </div>
+
+      <UseCaseModal
+        isOpen={selectedUseCase !== null}
+        onClose={() => setSelectedUseCase(null)}
+        useCaseIndex={selectedUseCase ?? 0}
+      />
     </section>
   );
 }
