@@ -215,6 +215,120 @@ export const content = {
           result: "Eliminates manual research, allowing sales teams to focus on conversions by rapidly populating lead pipelines with accurate data."
         }
       },
+      {
+        title: "Automated Client Onboarding System",
+        description: "Automated system that collects client information, organizes documentation, assigns tasks to internal teams, and launches project workflows automatically.",
+        impact: "Faster onboarding & consistent client experience",
+        color: "from-blue-500 to-cyan-600",
+        fullDetails: {
+          problem: "Manual client onboarding processes are time-consuming, error-prone, and create inconsistent experiences for new clients.",
+          solution: "A comprehensive automation system that handles the entire onboarding journey from data collection to workflow activation.",
+          capabilities: [
+            "Automated client data collection",
+            "Document organization and storage",
+            "Automatic task assignment to teams",
+            "Project workflow launching",
+            "Progress tracking and notifications",
+            "Client portal for self-service"
+          ],
+          result: "Reduces onboarding time by 70% while ensuring every client receives a consistent, professional experience."
+        }
+      },
+      {
+        title: "AI Customer Communication Assistant",
+        description: "AI-powered assistant that automatically responds to customer inquiries, handles FAQs, qualifies leads, and escalates complex cases to human agents.",
+        impact: "Faster response time & improved customer satisfaction",
+        color: "from-pink-500 to-rose-600",
+        fullDetails: {
+          problem: "Customer inquiries pile up during peak hours, leading to slow response times and frustrated customers.",
+          solution: "An intelligent AI assistant that handles routine inquiries 24/7 and seamlessly escalates complex issues to your team.",
+          capabilities: [
+            "AI-powered instant responses",
+            "FAQ automation",
+            "Lead qualification",
+            "Smart case escalation",
+            "Sentiment analysis",
+            "Multi-channel support (email, chat, social)"
+          ],
+          result: "Achieves instant response times and improves customer satisfaction scores by 40%."
+        }
+      },
+      {
+        title: "Lead Generation & Management Automation",
+        description: "Automated lead management platform that collects leads from multiple sources, organizes them into CRM pipelines, and triggers follow-up actions.",
+        impact: "Higher lead conversion & improved sales efficiency",
+        color: "from-green-500 to-emerald-600",
+        fullDetails: {
+          problem: "Leads are scattered across multiple platforms and manual follow-up is inconsistent, causing lost opportunities.",
+          solution: "A unified automation platform that captures, organizes, and nurtures leads through the entire sales funnel.",
+          capabilities: [
+            "Multi-source lead collection",
+            "CRM pipeline integration",
+            "Automated follow-up sequences",
+            "Lead scoring and qualification",
+            "Task creation for sales team",
+            "Real-time lead notifications"
+          ],
+          result: "Increases lead conversion by 35% and saves 15+ hours per week on manual lead management."
+        }
+      },
+      {
+        title: "Automated Reporting & Business Intelligence System",
+        description: "Business intelligence automation that aggregates data from multiple systems and generates real-time dashboards and scheduled reports.",
+        impact: "Faster decision-making & operational visibility",
+        color: "from-indigo-500 to-blue-600",
+        fullDetails: {
+          problem: "Business teams spend hours manually compiling reports from different systems, leading to outdated insights and slow decision-making.",
+          solution: "An intelligent BI automation system that aggregates data, visualizes metrics, and delivers insights in real-time.",
+          capabilities: [
+            "Multi-system data aggregation",
+            "Real-time dashboards",
+            "Scheduled report generation",
+            "Custom metric tracking",
+            "Automated alerts and notifications",
+            "Export to multiple formats"
+          ],
+          result: "Empowers faster, data-driven decisions with 90% reduction in reporting time."
+        }
+      },
+      {
+        title: "Business Process Automation System",
+        description: "End-to-end workflow automation system that removes repetitive operational tasks and connects multiple internal systems.",
+        impact: "Reduced operational costs & increased productivity",
+        color: "from-violet-500 to-purple-600",
+        fullDetails: {
+          problem: "Manual processes across departments create bottlenecks, errors, and unnecessary operational costs.",
+          solution: "A comprehensive workflow automation platform that connects all your systems and eliminates repetitive tasks.",
+          capabilities: [
+            "Cross-system integration",
+            "Workflow design and deployment",
+            "Task automation and routing",
+            "Approval workflows",
+            "Audit trails and compliance",
+            "Performance analytics"
+          ],
+          result: "Reduces operational costs by 45% while freeing up team time for high-value work."
+        }
+      },
+      {
+        title: "Automated Customer Feedback & Satisfaction System",
+        description: "Automated feedback collection and AI sentiment analysis system that helps businesses measure and improve customer satisfaction.",
+        impact: "Better customer insights & service improvement",
+        color: "from-amber-500 to-orange-600",
+        fullDetails: {
+          problem: "Businesses struggle to collect and analyze customer feedback at scale, missing critical insights for improvement.",
+          solution: "An AI-powered feedback automation system that collects responses, analyzes sentiment, and generates actionable insights.",
+          capabilities: [
+            "Automated feedback collection",
+            "AI sentiment analysis",
+            "Trend identification",
+            "Customer satisfaction scoring",
+            "Automated follow-up actions",
+            "Insightful reporting dashboards"
+          ],
+          result: "Provides deep customer insights that drive service improvements and boost satisfaction scores."
+        }
+      },
     ],
   },
   process: {
