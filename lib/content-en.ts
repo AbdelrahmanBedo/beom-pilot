@@ -163,18 +163,57 @@ export const content = {
         description: "Fully automated task distribution for a 200-person agency.",
         impact: "45% Efficiency Increase",
         color: "from-purple-500 to-indigo-600",
+        fullDetails: {
+          problem: "Inconsistent task tracking and delayed updates stemming from managing complex projects via manual communication and disparate spreadsheets.",
+          solution: "An end-to-end automation system that handles task delegation and progress monitoring, utilizing AI to evaluate performance and mitigate risks.",
+          capabilities: [
+            "Automatic task assignment",
+            "Scheduled progress follow-ups",
+            "AI-based evaluation of employee updates",
+            "Risk detection and escalation alerts",
+            "Real-time project insights through chat interface",
+            "Centralized task data management"
+          ],
+          result: "Significantly reduces manual coordination while providing leadership with continuous visibility and proactive risk management tools."
+        }
       },
       {
         title: "ATS Resume Analyzer",
         description: "Custom LLM to screen 10,000+ candidates against unique job specs.",
         impact: "80% Faster Hiring",
         color: "from-emerald-500 to-teal-600",
+        fullDetails: {
+          problem: "Recruitment teams overwhelmed by high applicant volumes, leading to slow, inconsistent, and unscalable manual review processes.",
+          solution: "An intelligent automation pipeline that ingests candidate data, extracts critical metrics, and provides structured AI analysis against job requirements.",
+          capabilities: [
+            "Automated resume text extraction",
+            "AI-based ATS scoring",
+            "Keyword match and gap analysis",
+            "Resume improvement suggestions",
+            "Automatically generated interview questions",
+            "Personalized cover letter generation",
+            "Structured result reporting"
+          ],
+          result: "Drastically accelerates the screening phase and ensures objective, data-driven evaluation for every candidate."
+        }
       },
       {
         title: "Google Maps Lead Gen",
         description: "Localized scrapers generating high-intent B2B leads automatically.",
         impact: "1.2k Leads Monthly",
         color: "from-orange-500 to-red-600",
+        fullDetails: {
+          problem: "The manual extraction of business leads from Google Maps is a bottleneck, requiring hours of repetitive searching and data entry.",
+          solution: "A scalable data collection pipeline that automates the harvesting of structured business information based on targeted keywords and locations.",
+          capabilities: [
+            "Campaign-driven lead generation",
+            "Automated business data collection",
+            "Structured lead database creation",
+            "Configurable search parameters",
+            "Scalable data collection pipeline"
+          ],
+          result: "Eliminates manual research, allowing sales teams to focus on conversions by rapidly populating lead pipelines with accurate data."
+        }
       },
     ],
   },
@@ -256,5 +295,20 @@ export const content = {
     copyright: "© 2026 BEOM Pilot. All rights reserved.",
   },
 };
+
+export interface ProjectDetails {
+  problem: string;
+  solution: string;
+  capabilities: string[];
+  result: string;
+}
+
+export interface ProjectCard {
+  title: string;
+  description: string;
+  impact: string;
+  color: string;
+  fullDetails?: ProjectDetails;
+}
 
 export type Content = typeof content;
