@@ -20,8 +20,8 @@ export const content = {
     secondaryCTA: "استكشف الحلول",
   },
   whyAutomation: {
-    title: "Drive Efficiency with AI",
-    subtitle: "Unlock the full potential of your business by removing the friction of manual labor. Our automation stack scales with your vision.",
+    title: "عزّز الكفاءة بالذكاء الاصطناعي",
+    subtitle: "أطلق العنان لإمكانيات عملك الكاملة من خلال إزالة عوائق العمل اليدوي. أنظمة الأتمتة لدينا تتطور مع رؤيتك.",
     cards: [
       {
         title: "تقليل العبء التشغيلي",
@@ -40,12 +40,12 @@ export const content = {
       },
       {
         title: "تقليل الأخطاء",
-        description: "Eliminate costly human mistakes with precision automation.",
+        description: "تخلّص من الأخطاء البشرية المكلفة باستخدام الأتمتة الدقيقة.",
         icon: "gpp_maybe",
       },
       {
         title: "نمو قابل للتوسع",
-        description: "Build systems that handle 10x volume without 10x the cost.",
+        description: "ابنِ أنظمة تتعامل مع 10 أضعاف الحجم دون 10 أضعاف التكلفة.",
         icon: "trending_up",
       },
     ],
@@ -57,7 +57,7 @@ export const content = {
       items: [
         {
           title: "الإدخال اليدوي",
-          description: "ساعاتspent on repetitive data copying across systems.",
+          description: "ساعات تُهدر في نسخ البيانات المتكرر بين الأنظمة.",
         },
         {
           title: "بطء في الاستجابة",
@@ -95,7 +95,7 @@ export const content = {
     cards: [
       {
         title: "أتمتة التواصل مع العملاء",
-        description: " chatbots ذكية ورسائل بريد إلكتروني تلقائية تبدو بشرية وتحل المشاكل على مدار الساعة.",
+        description: "روبوتات محادثة ذكية ورسائل بريد إلكتروني تلقائية تبدو بشرية وتحل المشاكل على مدار الساعة.",
         icon: "forum",
       },
       {
@@ -105,17 +105,17 @@ export const content = {
       },
       {
         title: "توليد العملاء المحتملين",
-        description: "أخراج وتثري保持 pipeline ممدوات استتلء بعملاء محتملين ذوي نية عالية.",
+        description: "أدوات استخراج وإثراء مخصصة لملء قائمة عملائك بالمهتمين ذوي النية العالية.",
         icon: "filter_alt",
       },
       {
         title: "العمليات وأنظمة CRM",
-        description: "اربط entire software stack الخاص بك. من Slack إلى HubSpot،，我们将让他们相互沟通。",
+        description: "اربط جميع برامجك ببعضها. من Slack إلى HubSpot، نجعلها تتواصل معاً.",
         icon: "settings_suggest",
       },
       {
         title: "التقارير المؤتمتة",
-        description: "توقف عن building spreadsheets يدوياً. احصل على بيانات لحظية في بريدك الإلكتروني يومياً.",
+        description: "توقف عن بناء الجداول يدوياً. احصل على بيانات لحظية في بريدك الإلكتروني يومياً.",
         icon: "table_chart",
       },
       {
@@ -160,21 +160,20 @@ export const content = {
     cards: [
       {
         title: "إدارة المشاريع بالذكاء الاصطناعي",
-        description: "توزيع مهام مؤتمت بالكامل代理机构 من 200 شخص.",
+        description: "توزيع مهام مؤتمت بالكامل لوكالة من 200 شخص.",
         impact: "زيادة الكفاءة 45%",
         color: "from-purple-500 to-indigo-600",
       },
       {
         title: "محلل السير الذاتية ATS",
-        description: "نظام مخصص لـفرز أكثر من 10,000 مرشح وفقاً لمعايير الوظيفة.",
-        value: "80% توظيف أسرع",
-        impact: "80% Faster Hiring",
+        description: "نظام مخصص لفرز أكثر من 10,000 مرشح وفقاً لمعايير الوظيفة.",
+        impact: "توظيف أسرع بنسبة 80%",
         color: "from-emerald-500 to-teal-600",
       },
       {
         title: "توليد عملاء Google Maps",
-        description: "extractors مخصصة لتوليد عملاء B2B مؤهلين تلقائياً.",
-        impact: "1.2k عملاء شهرياً",
+        description: "أدوات استخراج محلية لتوليد عملاء B2B مؤهلين تلقائياً.",
+        impact: "1.2 ألف عميل شهرياً",
         color: "from-orange-500 to-red-600",
       },
     ],
@@ -207,7 +206,7 @@ export const content = {
   cta: {
     title: "دعنا نستكشف فرص الأتمتة لعملك",
     subtitle: "انضم إلى أكثر من 50 شركة استعادت آلاف الساعات من خلال تنفيذ أنظمة ذكية وقابلة للتوسع.",
-    button: "جد استشارة",
+    button: "احجز استشارة",
   },
   contact: {
     title: "تواصل معنا",
@@ -251,10 +250,10 @@ export const content = {
       contact: "اتصل بنا",
       leadGen: "توليد العملاء",
       crm: "تكاملات CRM",
-      chatbots: " chatbots الذكاء الاصطناعي",
+      chatbots: "روبوتات المحادثة الذكية",
       workflow: "تصميم سير العمل",
     },
-    copyright: "© 2024 بيوم بايلوت. جميع الحقوق محفوظة.",
+    copyright: "© 2026 بيوم بايلوت. جميع الحقوق محفوظة.",
   },
 };
 

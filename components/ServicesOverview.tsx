@@ -86,10 +86,8 @@ export default function ServicesOverview() {
               <h3 className="text-xl font-bold mb-4 text-midnight group-hover:text-neon transition-colors">{service.title}</h3>
               <p className="text-slate-500 text-sm leading-relaxed">{service.description}</p>
               
-              <motion.div 
-                initial={{ opacity: 0, x: -10 }}
-                whileHover={{ opacity: 1, x: 0 }}
-                className="mt-4 flex items-center gap-2 text-neon font-medium text-sm"
+              <motion.div
+                className="mt-4 flex items-center gap-2 text-neon font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity"
               >
                 <span>Learn more</span>
                 <motion.span 

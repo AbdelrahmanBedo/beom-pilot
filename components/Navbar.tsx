@@ -40,20 +40,16 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <motion.div 
+        <motion.div
           whileHover={{ scale: 1.05 }}
-          className="flex items-center gap-3 cursor-pointer"
+          className="flex items-center cursor-pointer"
+          onClick={() => scrollToSection("hero")}
         >
-          <motion.div 
-            whileHover={{ rotate: 360 }}
-            transition={{ duration: 0.5 }}
-            className="p-2 bg-neon rounded-lg text-white"
-          >
-            <span className="material-symbols-outlined text-2xl">rocket_launch</span>
-          </motion.div>
-          <span className="text-xl font-bold tracking-tight text-white">
-            {content.nav.logo}
-          </span>
+          <img
+            src="/logo.svg"
+            alt="BEOM Pilot"
+            className="h-16 w-auto"
+          />
         </motion.div>
 
         <nav className={`hidden md:flex items-center gap-1 ${dir === "rtl" ? "ml-8" : "mr-8"}`}>

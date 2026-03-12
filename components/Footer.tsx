@@ -44,18 +44,15 @@ export default function Footer() {
           viewport={{ once: true }}
           className="col-span-1 md:col-span-1 space-y-6"
         >
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-3 text-white cursor-pointer"
+            className="flex items-center cursor-pointer"
           >
-            <motion.div 
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.5 }}
-              className="p-2 bg-neon rounded-lg"
-            >
-              <span className="material-symbols-outlined text-2xl">rocket_launch</span>
-            </motion.div>
-            <span className="text-xl font-bold tracking-tight">{content.nav.logo}</span>
+            <img
+              src="/logo.svg"
+              alt="BEOM Pilot"
+              className="h-24 w-auto"
+            />
           </motion.div>
           <p className="text-sm text-slate-400 leading-relaxed">
             {content.footer.description}
@@ -87,7 +84,7 @@ export default function Footer() {
           <h4 className="text-white font-bold mb-6">{content.footer.company}</h4>
           <ul className="space-y-4 text-sm">
             {[
-              { label: content.footer.links.about, section: "why" },
+              { label: content.footer.links.about, section: "services" },
               { label: content.footer.links.why, section: "why" },
               { label: content.footer.links.projects, section: "projects" },
               { label: content.footer.links.contact, section: "contact" },

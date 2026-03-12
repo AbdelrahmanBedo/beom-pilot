@@ -135,7 +135,7 @@ export const content = {
       },
       {
         title: "Customer Feedback Automation",
-        description: "Automated收集 and analysis of customer feedback",
+        description: "Automated collection and analysis of customer feedback",
       },
       {
         title: "Sales Automation",
@@ -253,7 +253,7 @@ export const content = {
       chatbots: "AI Chatbots",
       workflow: "Workflow Design",
     },
-    copyright: "© 2024 BEOM Pilot. All rights reserved.",
+    copyright: "© 2026 BEOM Pilot. All rights reserved.",
   },
 };
 
