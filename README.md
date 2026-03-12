@@ -88,7 +88,4 @@ beom-pilot/
 └── package.json
 ```
 
-## Contact
-
-- Email: omardief204@gmail.com
-- Phone: +20 127 299 1153
+## Tech Stack
