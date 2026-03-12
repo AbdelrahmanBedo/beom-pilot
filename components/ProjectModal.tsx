@@ -20,9 +20,22 @@ interface ProjectModalProps {
     color: string;
     fullDetails?: ProjectDetails;
   } | null;
+  projectIndex?: number;
 }
 
-export default function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
+const projectImages = [
+  "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80",
+];
+
+export default function ProjectModal({ isOpen, onClose, project, projectIndex = 0 }: ProjectModalProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -71,16 +84,19 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
             className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl"
           >
             {/* Header */}
-            <div className={`relative h-48 bg-gradient-to-br ${project.color} rounded-t-3xl overflow-hidden`}>
+            <div className="relative h-56 overflow-hidden">
+              {/* Image */}
+              <img
+                src={projectImages[projectIndex]}
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              {/* Gradient overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-60`} />
               <div className="absolute inset-0 bg-black/30" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="material-symbols-outlined text-white/30 text-9xl">
-                  {project.title.includes("Project Management") ? "task" : project.title.includes("Resume") ? "description" : "location_on"}
-                </span>
-              </div>
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors"
+                className="absolute top-4 right-4 w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors z-10"
               >
                 <span className="material-symbols-outlined text-white">close</span>
               </button>

@@ -20,6 +20,7 @@ const projectImages = [
 export default function FeaturedProjects() {
   const { content } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<typeof content.projects.cards[0] | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -128,7 +129,10 @@ export default function FeaturedProjects() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   whileHover={{ y: -8 }}
-                  onClick={() => setSelectedProject(project)}
+                  onClick={() => {
+                    setSelectedProject(project);
+                    setSelectedIndex(index);
+                  }}
                   className="flex-shrink-0 w-[300px] sm:w-[340px] md:w-[360px] lg:w-[380px] snap-center cursor-pointer group"
                 >
                   <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-neon/30">
@@ -192,6 +196,7 @@ export default function FeaturedProjects() {
         isOpen={!!selectedProject}
         onClose={() => setSelectedProject(null)}
         project={selectedProject}
+        projectIndex={selectedIndex}
       />
 
       <style jsx global>{`
