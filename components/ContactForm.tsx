@@ -9,6 +9,7 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
     message: "",
   });
@@ -32,7 +33,7 @@ export default function ContactForm() {
 
       if (response.ok) {
         setIsSuccess(true);
-        setFormData({ name: "", email: "", company: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", company: "", message: "" });
         setTimeout(() => setIsSuccess(false), 3000);
       } else {
         setError(true);
@@ -184,6 +185,20 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-neon focus:ring-2 focus:ring-neon/20 outline-none transition-all"
+                />
+              </motion.div>
+
+              <motion.div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Phone
+                </label>
+                <motion.input
+                  variants={inputVariants}
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-neon focus:ring-2 focus:ring-neon/20 outline-none transition-all"
                 />
               </motion.div>
