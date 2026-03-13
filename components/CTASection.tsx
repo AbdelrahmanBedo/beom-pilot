@@ -2,14 +2,10 @@
 
 import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
+import { scrollToSection } from "@/lib/utils";
 
 export default function CTASection() {
   const { content } = useLanguage();
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) element.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="py-24 bg-midnight relative overflow-hidden">

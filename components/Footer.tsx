@@ -5,17 +5,11 @@ import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
 import LegalModal from "./LegalModal";
 import Logo from "./Logo";
+import { scrollToSection } from "@/lib/utils";
 
 export default function Footer() {
   const { content } = useLanguage();
   const [legalModal, setLegalModal] = useState<"terms" | "privacy" | null>(null);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <>

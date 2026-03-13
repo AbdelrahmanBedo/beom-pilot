@@ -367,6 +367,7 @@ export const content = {
     form: {
       name: "Your Name",
       email: "Email Address",
+      phone: "Phone Number",
       company: "Company Name",
       message: "How can we help?",
       submit: "Send Message",

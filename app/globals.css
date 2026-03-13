@@ -205,6 +205,15 @@ button, a, input, textarea {
   background-size: 20px 20px;
 }
 
+/* Hide scrollbar while keeping scroll functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Noise texture overlay */
 .noise-overlay::before {
   content: '';

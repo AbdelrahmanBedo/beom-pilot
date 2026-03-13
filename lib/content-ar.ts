@@ -367,6 +367,7 @@ export const content = {
     form: {
       name: "اسمك",
       email: "البريد الإلكتروني",
+      phone: "رقم الهاتف",
       company: "اسم الشركة",
       message: "كيف يمكننا مساعدتك؟",
       submit: "إرسال الرسالة",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import ProjectModal from "./ProjectModal";
@@ -137,10 +138,13 @@ export default function FeaturedProjects() {
                 >
                   <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-neon/30">
                     <div className="aspect-[16/10] relative overflow-hidden">
-                      <img
+                      <Image
                         src={projectImages[index]}
                         alt={project.title}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        fill
+                        sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 380px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
                       />
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-50 group-hover:opacity-65 transition-opacity duration-300`}
@@ -199,15 +203,6 @@ export default function FeaturedProjects() {
         projectIndex={selectedIndex}
       />
 
-      <style jsx global>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </>
   );
 }

@@ -4,6 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import Logo from "./Logo";
+import { scrollToSection } from "@/lib/utils";
 
 export default function Navbar() {
   const { lang, setLang, content, dir } = useLanguage();
@@ -13,13 +14,6 @@ export default function Navbar() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50);
   });
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   const navItems = [
     { key: "why", label: content.nav.links.why },
