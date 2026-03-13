@@ -14,19 +14,34 @@ export default function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(false);
     
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    console.log("Form submitted:", formData);
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    setFormData({ name: "", email: "", company: "", message: "" });
-    
-    setTimeout(() => setIsSuccess(false), 3000);
+    try {
+      const response = await fetch("https://omar204.app.n8n.cloud/webhook-test/contact-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", company: "", message: "" });
+        setTimeout(() => setIsSuccess(false), 3000);
+      } else {
+        setError(true);
+      }
+    } catch (err) {
+      setError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -242,6 +257,21 @@ export default function ContactForm() {
                         check_circle
                       </motion.span>
                       {content.contact.form.success}
+                    </motion.span>
+                  ) : error ? (
+                    <motion.span
+                      key="error"
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.5 }}
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <motion.span 
+                        className="material-symbols-outlined"
+                      >
+                        error
+                      </motion.span>
+                      Try Again
                     </motion.span>
                   ) : (
                     <motion.span
